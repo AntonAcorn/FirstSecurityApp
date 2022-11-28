@@ -18,6 +18,7 @@ import java.util.Optional;
 
 //Сервис предназначается именно для SpringSecurity,
 //чтобы Security знал, что именно этот сервис загружает пользователя => интерфейс
+
 @Service
 public class PersonDetailsService implements UserDetailsService {
     private final PeopleRepository peopleRepository;
@@ -36,5 +37,4 @@ public class PersonDetailsService implements UserDetailsService {
         return new PersonDetails(person.get());
 
     }
-
 }

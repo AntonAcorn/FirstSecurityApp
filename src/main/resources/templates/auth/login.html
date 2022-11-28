@@ -6,6 +6,10 @@
 </head>
 <body>
 <form name="form" method="post" action="/process_login">
+<!--    скрытое поле для шифрования name-ключ, ключ-token-->
+<!--    токен во все остальные поля будет добавлен автоматически-->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
     <label for="username">Enter username</label>
     <input type="text" name="username" id="username"/>
     <br/>
