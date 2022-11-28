@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import ru.acorn.FirstSecurityApp.modells.Person;
 import ru.acorn.FirstSecurityApp.repositories.PeopleRepository;
@@ -35,8 +36,5 @@ public class PersonDetailsService implements UserDetailsService {
         return new PersonDetails(person.get());
 
     }
-    @Bean
-    public PasswordEncoder getPasswordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
-    }
+
 }
