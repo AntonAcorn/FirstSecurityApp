@@ -35,6 +35,11 @@ public class Person {
     @Getter
     private String password;
 
+    @Column(name = "role")
+    @Setter
+    @Getter
+    private String role;
+
     public Person() {
     }
 

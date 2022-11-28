@@ -21,7 +21,7 @@ public class RegistrationService {
             //который возвращает bCrypt
     public void register(Person person){
         person.setPassword(passwordEncoder.encode(person.getPassword()));
-
+        person.setRole("ROLE_USER");//обязательно ROLE_ иначе Security не поймет
         peopleRepository.save(person);
     }
 }

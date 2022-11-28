@@ -1,10 +1,13 @@
 package ru.acorn.FirstSecurityApp.security;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.acorn.FirstSecurityApp.modells.Person;
 
 import java.util.Collection;
+import java.util.Collections;
+
 //Этот класс является оберткой над сущностью Person, чтобы не работать на прямую над Person
 public class PersonDetails implements UserDetails {
 
@@ -16,7 +19,7 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {//Роли, которые есть у пользователя
-        return null;
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override
